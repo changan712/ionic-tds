@@ -1,27 +1,33 @@
-import {NgModule, ErrorHandler} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {IonicApp, IonicModule, IonicErrorHandler} from 'ionic-angular';
+import {NgModule} from '@angular/core';
+
+import {IonicApp, IonicModule} from 'ionic-angular';
 import {MyApp} from './app.component';
-import {SplashScreen} from "@ionic-native/splash-screen";
-import {StatusBar} from "@ionic-native/status-bar";
+
+
+import './rxjs-extensions';
+
+import {MyRequestOptions} from "../providers/my-request-options";
+import {CoreModule} from "../providers/core/core.module";
+import {BrowserModule} from "@angular/platform-browser";
+
 
 @NgModule({
     declarations: [
         MyApp,
+
     ],
+
     imports: [
         BrowserModule,
-        IonicModule.forRoot(MyApp, { })
+        IonicModule.forRoot(MyApp, {}),
+        CoreModule,
     ],
+
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp
     ],
-    providers: [
-        {provide: ErrorHandler, useClass: IonicErrorHandler},
-        StatusBar,
-        SplashScreen
-    ]
+
 })
 export class AppModule {
 }
