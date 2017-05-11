@@ -5,6 +5,7 @@ import {MyApp} from './app.component';
 import {SplashScreen} from "@ionic-native/splash-screen";
 import {StatusBar} from "@ionic-native/status-bar";
 
+
 @NgModule({
     declarations: [
         MyApp,
