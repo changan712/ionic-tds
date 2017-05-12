@@ -6,13 +6,16 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>feed-detail</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title>feed-detail</ion-title>
+    </ion-navbar>
 
 </ion-header>
 
-
 <ion-content padding>
 
+    <ion-card *ngIf="view">
+        <pre> {{view|json}}
+        </pre>
+    </ion-card>
 </ion-content>

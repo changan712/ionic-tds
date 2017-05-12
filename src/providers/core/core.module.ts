@@ -6,11 +6,13 @@ import {SplashScreen} from "@ionic-native/splash-screen";
 import {RequestOptions, HttpModule} from "@angular/http";
 import {MyApp} from "../../app/app.component";
 import {BrowserModule} from "@angular/platform-browser";
+import {ResourceModule} from "../resource/resource.module";
 @NgModule({
     declarations: [],
     imports: [
 
         HttpModule,
+        ResourceModule,
     ],
     providers: [
         {provide: ErrorHandler, useClass: IonicErrorHandler},

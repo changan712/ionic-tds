@@ -20,22 +20,22 @@ export class Tabs {
     selectedIndex: number = 0;
     tabs: any[] = TAB_CONFIG;
 
-    constructor(public navCtrl: NavController,private http:Http) {
+    constructor(public navCtrl: NavController, private http: Http) {
     }
 
     ngOnInit() {
         let reg = /^#\/tabs\/(\w+)\//;
-      /*  let tabName = reg.exec(location.hash)[1];
-        this.selectedIndex = this.tabs.findIndex(tab => tabName == tab.title) || 0;*/
+        let tabName = reg.exec(location.hash) &&  reg.exec(location.hash)[1];
+        this.selectedIndex = this.tabs.findIndex(tab => tabName == tab.title) || 0;
     }
 
 
-   /* ionViewCanEnter() {
+    ionViewCanEnter() {
 
         return this.login();
-    }*/
+    }
 
-    login(id?: number):Promise<boolean> {
+    login(id?: number): Promise<boolean> {
         return this.http.get('/api/app/user/test?corp_id=tds2in1&id=' + (id || '')).toPromise().then(res => {
             return true
 
